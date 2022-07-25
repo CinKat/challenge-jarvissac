@@ -1,5 +1,15 @@
+import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
+import { Table } from "./components/tableBody";
+import { TableHeader } from "./components/tableHeader";
 import { showUsers } from "./service";
+
+const StyledTable = styled.table`
+    /* table-layout: fixed; */
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid white;
+  `
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -13,11 +23,13 @@ function App() {
     });
   }, [])
 
-
   return (
-    <table>
-
-    </table>
+    <StyledTable>
+      <TableHeader />
+      {users.map((user, index) => (
+        <Table key={index} user={user} />
+      ))}
+    </StyledTable>
   );
 }
 
