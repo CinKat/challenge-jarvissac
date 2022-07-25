@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 import { StyleTh } from "./tableBody"
 
 const StyledThead = styled.thead`
-  background-color: #1565c0;
+  background-color: #3E7ADF;
   color: white;
 `
 
